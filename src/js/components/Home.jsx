@@ -1,26 +1,93 @@
-import React from "react";
+import React, { useState } from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-            
+	const [inputValue, setInputvalue] = useState("")
+	const [tarea, setTarea] = useState(null)
 
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+	const onInputChange = (e) => {
+		setInputvalue(e.target.value)
+	}
+
+	const handleKeyUp = (e) => {
+		if (e.key === "Enter") {
+			setTarea(inputValue)
+			setInputvalue("")
+		}
+	}
+
+	return (
+		<div className="container">
+			<h1>Lista de Tareas</h1>
+			<ul>
+				<li>
+					<input
+						type="text"
+						value={inputValue}
+						placeholder="Tarea 1"
+						onChange={onInputChange}
+						onKeyUp={handleKeyUp}
+					/>
+					{tarea && <p> {tarea} </p>}
+				</li>
+
+				<li>
+					<input
+						type="text"
+						value={inputValue}
+						placeholder="Tarea 2"
+						onChange={onInputChange}
+						onKeyUp={handleKeyUp}
+					/>
+					{tarea && <p> {tarea} </p>}
+				</li>
+
+				<li>
+					<input
+						type="text"
+						value={inputValue}
+						placeholder="Tarea 3"
+						onChange={onInputChange}
+						onKeyUp={handleKeyUp}
+					/>
+					{tarea && <p> {tarea} </p>}
+				</li>
+
+				<li>
+					<input
+						type="text"
+						value={inputValue}
+						placeholder="Tarea 4"
+						onChange={onInputChange}
+						onKeyUp={handleKeyUp}
+					/>
+					{tarea && <p> {tarea} </p>}
+				</li>
+
+				<li>
+					<input
+						type="text"
+						value={inputValue}
+						placeholder="Tarea 5"
+						onChange={onInputChange}
+						onKeyUp={handleKeyUp}
+					/>
+					{tarea && <p> {tarea} </p>}
+				</li>
+
+				<li>
+					<input
+						type="text"
+						value={inputValue}
+						placeholder="Tarea 6"
+						onChange={onInputChange}
+						onKeyUp={handleKeyUp}
+					/>
+					{tarea && <p> {tarea} </p>}
+				</li>
+
+			</ul>
 		</div>
 	);
 };
