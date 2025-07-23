@@ -36,7 +36,7 @@ const Home = () => {
 						tareas.map((tarea, index) => (
 							<div className="d-flex justify-content-between">
 								<p>{tarea}</p>
-								<span onClick={() => deleteTarea(index)}>✖️</span>
+								<button className="btn btn-darkbtn" onClick={() => deleteTarea(index)}>✖️</button>
 							</div>
 						)) :
 						<h2>No hay tarea agrega una</h2>
